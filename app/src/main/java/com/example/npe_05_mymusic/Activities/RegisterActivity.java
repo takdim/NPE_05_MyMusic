@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.npe_05_mymusic.Models.User;
 import com.example.npe_05_mymusic.R;
 import androidx.annotation.NonNull;
 

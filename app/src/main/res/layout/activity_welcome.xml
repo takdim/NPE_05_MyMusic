@@ -86,11 +86,11 @@
                 android:textColor="@color/white"
                 android:paddingVertical="5dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:textSize="15sp"
+                android:textSize="12sp"
+                android:paddingLeft="20dp"
                 android:layout_marginVertical="10dp"
                 app:icon="@drawable/ic_baseline_smartphone_24"
                 app:iconTint="@color/white"
-                app:iconGravity="textStart"
                 app:backgroundTint="@null"
                 style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                 />
@@ -104,21 +104,20 @@
                 android:textColor="@color/white"
                 android:paddingVertical="5dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:layout_marginTop="10dp"
                 app:icon="@drawable/ic_icon_ionic_logo_google"
                 app:iconTint="@color/white"
-                app:iconGravity="textStart"
+                android:paddingLeft="20dp"
                 app:backgroundTint="@null"
                 style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                 />
-
             <TextView
                 android:id="@+id/tv_masuk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/w_tv3"
-                android:textSize="24dp"
+                android:textSize="18dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/white"
                 android:layout_marginTop="40dp"/>
