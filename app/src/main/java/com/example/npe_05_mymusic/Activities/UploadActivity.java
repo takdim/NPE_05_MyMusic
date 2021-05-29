@@ -3,6 +3,7 @@ package com.example.npe_05_mymusic.Activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -18,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -41,9 +43,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UploadActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private Button btnUpload, btnUploadImg, btnUploadSong, btnPlaySong, btnDeploy;
-    private TextInputEditText etTitle, etArtist, etGenre;
-    private ImageView ivCover;
+    private Button btnUpload, btnDeploy;
+    private ConstraintLayout btnUploadImg, btnUploadSong;
+    private EditText etTitle, etArtist, etGenre;
+    private ImageView ivCover, btnPlaySong;
     private AutoCompleteTextView tvGenre;
     private Spinner spinGenre;
     private DatabaseReference dbReference;
@@ -65,16 +68,13 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         setContentView(R.layout.activity_upload);
 
 
-        btnUpload = findViewById(R.id.btnUpload);
-        btnUploadImg = findViewById(R.id.btnUploadImage);
-        btnUploadSong = findViewById(R.id.btnUploadSong);
-        btnPlaySong = findViewById(R.id.btnPlaySong);
-        btnDeploy = findViewById(R.id.btnDeploy);
-        etTitle = findViewById(R.id.etSongTitle);
-        etArtist = findViewById(R.id.etSongArtist);
-        tvGenre = findViewById(R.id.tvGenre);
-//        spinGenre = findViewById(R.id.genre_spinner);
-        ivCover = findViewById(R.id.ivCover);
+        btnUpload = findViewById(R.id.btn_upload);
+        btnUploadImg = findViewById(R.id.tombol_gambar);
+        btnUploadSong = findViewById(R.id.cv_lagu);
+        btnPlaySong = findViewById(R.id.icon_song);
+        etTitle = findViewById(R.id.et_song_title);
+        etArtist = findViewById(R.id.et_song_artist);
+        tvGenre = findViewById(R.id.tv_genre);
 
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
@@ -157,20 +157,6 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
             audioFilePath = data.getData();
 
             Uri uriData = Uri.parse(String.valueOf(audioFilePath));
-            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), uriData);
-            btnPlaySong.setOnClickListener(new View.OnClickListener() {
-                @SuppressLint("SetTextI18n")
-                @Override
-                public void onClick(View v) {
-                    if (btnPlaySong.getText().toString().equalsIgnoreCase("Putar Lagu")) {
-                        btnPlaySong.setText("Pause Lagu");
-                        mediaPlayer.start();
-                    } else if (btnPlaySong.getText().toString().equalsIgnoreCase("Pause Lagu")) {
-                        btnPlaySong.setText("Putar Lagu");
-                        mediaPlayer.pause();
-                    }
-                }
-            });
             Log.d("PATH", String.valueOf(uriData));
         }
     }

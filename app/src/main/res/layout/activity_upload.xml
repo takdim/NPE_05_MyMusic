@@ -47,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cv_profile"
+                android:id="@+id/cv_lagu"
                 android:layout_width="match_parent"
                 android:layout_gravity="center"
                 android:layout_height="140dp"
@@ -84,8 +84,6 @@
                         android:fontFamily="@font/poppins_regular"
                         android:textSize="16dp"/>
                 </LinearLayout>
-
-
                 <ImageView
                     android:id="@+id/iv_change_image"
                     android:layout_width="match_parent"
@@ -121,6 +119,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <EditText
+                android:id="@+id/et_song_title"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/background_button"
@@ -132,6 +131,7 @@
                 android:layout_marginTop="20dp"
                 />
             <EditText
+                android:id="@+id/et_song_artist"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/background_button"
@@ -142,17 +142,27 @@
                 android:textSize="18dp"
                 android:layout_marginTop="20dp"
                 />
-            <EditText
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/background_button"
-                android:textColorHint="@color/mBlackSmooth"
-                android:hint="@string/u_tv6"
-                android:fontFamily="@font/poppins_regular"
-                android:paddingHorizontal="20dp"
-                android:textSize="18dp"
                 android:layout_marginTop="20dp"
-                />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_gravity="center_horizontal"
+                app:hintTextColor="@color/mBlackSmooth"
+                app:boxBackgroundMode="outline"
+                android:textColorHint="@color/mBlackSmooth"
+                android:background="@drawable/background_button"
+                android:hint="Genre">
+                <AutoCompleteTextView
+                    android:id="@+id/tv_genre"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_width="match_parent"
+                    android:background="@null"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
